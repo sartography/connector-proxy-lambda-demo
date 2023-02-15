@@ -25,3 +25,11 @@ def test_v1_commands():
     assert result["statusCode"] == 200
     body = json.loads(result["body"])
     assert len(body) == 2
+
+# TODO: move to integration test
+def test_do_command():
+    event = {'version': '2.0', 'routeKey': '$default', 'rawPath': '/v1/do/http/GetRequest', 'rawQueryString': '', 'requestContext': {'http': {'method': 'POST', 'path': '/v1/do/http/GetRequest', 'protocol': 'HTTP/1.1'}, 'routeKey': '$default', 'stage': '$default', 'body': '{"url": "http://www.google.com", "headers": [], "params": null, "basic_auth_username": null, "basic_auth_password": null}', 'isBase64Encoded': False}}
+    print(event)
+    context = {}
+    result = lambda_handler(event, context)
+    assert result["statusCode"] == 200
