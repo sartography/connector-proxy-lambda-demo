@@ -15,11 +15,13 @@ def test_404():
     context = {}
     result = lambda_handler(event, context)
     assert result["statusCode"] == 404
-    assert result["body"] == '"Not found."'
+    body = json.loads(result["body"])
+    assert body == "Not found."
 
 def test_v1_commands():
     event = {'version': '2.0', 'routeKey': '$default', 'rawPath': '/v1/commands', 'rawQueryString': ''}
     context = {}
     result = lambda_handler(event, context)
     assert result["statusCode"] == 200
-    assert result["body"] == '[]'
+    body = json.loads(result["body"])
+    assert len(body) == 2
