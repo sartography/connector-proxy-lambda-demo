@@ -51,13 +51,13 @@ def route_do_command(event, context):
     if command is None:
         return None
 
-    params = json.loads(request_context.get("body", "{}"))
+    params = json.loads(event.get("body", "{}"))
     task_data = params.pop('spiff__task_data', '{}')
     result = command(**params).execute({}, task_data)
 
     return {
-        "statusCode": 200,
-        "body": result,
+        "statusCode": result["status"],
+        "body": result["response"],
     }
 
 def _list_targets(targets):
