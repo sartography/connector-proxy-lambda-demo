@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "connector-proxy-lambda-demo"
+version = "0.1.0"
+description = ""
+authors = ["Jon Herron <jon.herron@yahoo.com>"]
+readme = "README.md"
+packages = [{include = "connector_proxy_lambda_demo"}]
+
+[tool.poetry.dependencies]
+python = "3.9.*"
+spiffworkflow-proxy = {git = "https://github.com/sartography/spiffworkflow-proxy", rev="lambda_demo"}
+connector-http = {git = "https://github.com/sartography/connector-http.git", rev="lambda_demo"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
