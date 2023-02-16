@@ -8,8 +8,8 @@ packages = [{include = "connector_proxy_lambda_demo"}]
 
 [tool.poetry.dependencies]
 python = "3.9.*"
-spiffworkflow-proxy = {git = "https://github.com/sartography/spiffworkflow-proxy", rev="lambda_demo"}
-connector-http = {git = "https://github.com/sartography/connector-http.git", rev="lambda_demo"}
+spiffworkflow-proxy = {git = "https://github.com/sartography/spiffworkflow-proxy"}
+connector-http = {git = "https://github.com/sartography/connector-http.git"}
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.0"
