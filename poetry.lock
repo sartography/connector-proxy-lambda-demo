@@ -184,8 +184,8 @@ requests = "^2.28.1"
 [package.source]
 type = "git"
 url = "https://github.com/sartography/connector-http.git"
-reference = "lambda_demo"
-resolved_reference = "8839e534bb67c859898d86e56068cdc8fb95ce7f"
+reference = "HEAD"
+resolved_reference = "2aae77fb7c65fe44e01e381ac8d5a83aaf27ff18"
 
 [[package]]
 name = "exceptiongroup"
@@ -505,8 +505,8 @@ Flask-OAuthlib = "^0.9.6"
 [package.source]
 type = "git"
 url = "https://github.com/sartography/spiffworkflow-proxy"
-reference = "lambda_demo"
-resolved_reference = "c011a4ccb62f9ed722172c9261a5c0fc212f1542"
+reference = "HEAD"
+resolved_reference = "4cdbd3b37a15a49fbb043528ff3f9aeee9784b2f"
 
 [[package]]
 name = "tomli"
@@ -574,4 +574,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = "3.9.*"
-content-hash = "f8c3b847cf6d3b099fe93cad6fd80c168c13caea669ee83140f5c41c4a49efd5"
+content-hash = "d3d55ce385695f5697c024beb8f471619d4b8a1f7d52c321fd96aa470e891322"
