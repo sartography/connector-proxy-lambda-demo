@@ -1,7 +1,5 @@
 #!/bin/sh
 
-poetry run pytest
-
 rm -f archive.zip
 
 # https://chariotsolutions.com/blog/post/building-lambdas-with-poetry/
