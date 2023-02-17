@@ -1,12 +1,10 @@
 FROM public.ecr.aws/lambda/python:3.9
 
-# Install the function's dependencies using file requirements.txt
-# from your project folder.
-
-#COPY requirements.txt  .
-#RUN  pip3 install -r requirements.txt --target "${LAMBDA_TASK_ROOT}"
-
 WORKDIR ${LAMBDA_TASK_ROOT}
+
+RUN yum -y update && \
+    yum -y install \
+        git
 
 COPY pyproject.toml poetry.lock README.md ./
 COPY connector_proxy_lambda_demo/*.py ./connector_proxy_lambda_demo/
