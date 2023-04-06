@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "connector_proxy_lambda_demo"}]
 
 [tool.poetry.dependencies]
-python = "3.9.*"
+python = "3.10.*"
 spiffworkflow-proxy = {git = "https://github.com/sartography/spiffworkflow-proxy"}
 connector-http = {git = "https://github.com/sartography/connector-http.git"}
 

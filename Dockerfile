@@ -1,9 +1,10 @@
-FROM public.ecr.aws/lambda/python:3.9 AS build
+FROM public.ecr.aws/lambda/python:3.10 AS build
 
 # install git so poetry/pip can install spiffworkflow-proxy and connector-http
 RUN yum -y update && \
     yum -y install \
-        git
+        git \
+	zip
 
 WORKDIR ${LAMBDA_TASK_ROOT}
 
@@ -12,10 +13,14 @@ COPY connector_proxy_lambda_demo/*.py ./connector_proxy_lambda_demo/
 
 RUN pip3 install poetry
 RUN poetry install
+
+# TODO: run tests
+# TODO: make the zip in own stage
+
 RUN poetry build
 RUN poetry run pip3 install -t ./package dist/*.whl
 
-FROM public.ecr.aws/lambda/python:3.9 AS final
+FROM public.ecr.aws/lambda/python:3.10 AS final
 
 WORKDIR ${LAMBDA_TASK_ROOT}
 
