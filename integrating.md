@@ -6,13 +6,21 @@ There is an assumption that you have access to login to the AWS Console and can 
 
 ## Building the zip
 
-One option when deploying a Lambda function is to upload a zip file containing the source code or executable. Since that is pretty straightforward we will be using that option for this demo. In the root of this repository run:
+One option when deploying a Lambda function is to upload a zip file containing the source code or executable. In the root of this repository run:
 
 ```
 make zip
 ```
 
-This will create a zip file containing the lambda entry point function as well as all the dependencies needed to execute the connectors. For this example the libraries [spiffworkflow-proxy](https://github.com/sartography/spiffworkflow-proxy) is used for discovering connectors and [connector-http](https://github.com/sartography/connector-http) is an example connector that provides http get and post requests.
+This will create a zip file containing the [lambda entry point function](https://github.com/jbirddog/connector-proxy-lambda-demo/blob/main/connector_proxy_lambda_demo/lambda_function.py#L5) as well as all the dependencies needed to execute the connectors. For this example the libraries [spiffworkflow-proxy](https://github.com/sartography/spiffworkflow-proxy) is used for discovering connectors and [connector-http](https://github.com/sartography/connector-http) is an example connector that provides http get and post requests.
+
+Once `make zip` completes `connector_proxy_lambda_demo.zip` will be available in the repository root.
+
+## Deploying the Lambda Function
+
+Log in to the AWS Console and navigate to the Lambda section. 
+
+From there choose `Create function`.
 
 
 ### Old stuff below
