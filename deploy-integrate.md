@@ -90,4 +90,12 @@ Create a new process model as described in the [Getting Started Guide](https://w
 
 ![Screenshot from 2023-04-06 16-38-02](https://user-images.githubusercontent.com/100367399/230489492-63cf88bf-7533-4160-95cb-d6194506dd5d.png)
 
+Choose the `http/GetRequest` operator ID and enter the [dog fact api](https://dog-api.kinduff.com/api/facts) URL. Remember to quote it since parameters are evaluated as Python expressions.
+
+![Screenshot from 2023-04-06 16-50-42](https://user-images.githubusercontent.com/100367399/230491661-abdfdd3a-48f5-4f50-b6e5-9e3a5f562961.png)
+
+Run the process and once complete you can see the response in the workflow:
+
+![Screenshot from 2023-04-06 16-49-53](https://user-images.githubusercontent.com/100367399/230491713-9d3f9bd0-f284-4004-b00c-cb6dc94b53df.png)
+
 
