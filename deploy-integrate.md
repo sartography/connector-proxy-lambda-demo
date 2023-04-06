@@ -83,3 +83,11 @@ Restart:
 docker compose down
 docker compose up -d
 ```
+
+## Testing
+
+Create a new process model as described in the [Getting Started Guide](https://www.spiffworkflow.org/posts/articles/get_started/). Add a `Service Task` and in its properties panel you will see a drop down to pick which connector in your `Connector Proxy` to call. In this demo we deployed http get and post connectors:
+
+![Screenshot from 2023-04-06 16-38-02](https://user-images.githubusercontent.com/100367399/230489492-63cf88bf-7533-4160-95cb-d6194506dd5d.png)
+
+
