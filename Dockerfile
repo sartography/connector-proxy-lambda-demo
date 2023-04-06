@@ -32,6 +32,8 @@ COPY --from=build /build/connector_proxy_lambda_demo.zip .
 
 WORKDIR ${LAMBDA_TASK_ROOT}
 
+# TODO: maybe better to extract the zip to better approximate what happens when uploading?
+
 # copy all dependencies installed during the build into the task root
 COPY --from=build /build/package ./
 
