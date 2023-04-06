@@ -16,7 +16,7 @@ This will create a zip file containing the [lambda entry point function](https:/
 
 Once `make zip` completes `connector_proxy_lambda_demo.zip` will be available in the repository root.
 
-## Deploying the Lambda Function
+## Creating the Lambda Function
 
 Log in to the AWS Console and navigate to the Lambda section. 
 
@@ -38,3 +38,18 @@ After hitting the `Create function` button you will be taken to your new Lambda 
 
 ![Screenshot from 2023-04-06 16-02-11](https://user-images.githubusercontent.com/100367399/230482618-cf4cf088-3629-4832-9a3d-d81f29842aff.png)
 
+In the bottom right of the first section is a link to your Lamba's function URL. Click it for a hello world response.
+
+![Screenshot from 2023-04-06 16-09-08](https://user-images.githubusercontent.com/100367399/230484874-7529b786-da15-4a2c-8731-3780712bc0ef.png)
+
+## Deploying the Lambda Function
+
+If you scroll down you will see a section with the example code created with your Lambda function. We are going to replace this with the contents of our zip file. Choose `Upload from` and select `.zip file`.
+
+![Screenshot from 2023-04-06 16-09-34](https://user-images.githubusercontent.com/100367399/230484774-c0b93e1a-e34d-47b3-813f-03598d5bd631.png)
+
+After a confirmation dialog you will see your lambda has been updated:
+
+![Screenshot from 2023-04-06 16-12-05](https://user-images.githubusercontent.com/100367399/230485279-425e71ca-1c7f-4da3-b5e0-2fd2a464d746.png)
+
+Click your function URL again to see a hello from our deployed Connector Proxy.
