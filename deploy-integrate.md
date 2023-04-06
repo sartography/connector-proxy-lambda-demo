@@ -70,7 +70,7 @@ index 95b87b39..7d55c492 100644
  
        SPIFFWORKFLOW_BACKEND_BPMN_SPEC_ABSOLUTE_DIR: "/app/process_models"
 -      SPIFFWORKFLOW_BACKEND_CONNECTOR_PROXY_URL: "http://spiffworkflow-connector:8004"
-+      SPIFFWORKFLOW_BACKEND_CONNECTOR_PROXY_URL: "https://crbxgaopinfxqscntkqixjbl4e0gigpm.lambda-url.us-east-1.on.aws/"
++      SPIFFWORKFLOW_BACKEND_CONNECTOR_PROXY_URL: "https://crbxgaopinfxqscntkqixjbl4e0gigpm.lambda-url.us-east-1.on.aws"
        SPIFFWORKFLOW_BACKEND_DATABASE_URI: "mysql+mysqlconnector://root:${SPIFF_MYSQL_PASS:-my-secret-pw}@spiffworkflow-db:${SPIFF_MYSQL_PORT:-8003}/spiffworkflow_backend_development"
        SPIFFWORKFLOW_BACKEND_LOAD_FIXTURE_DATA: "false"
        SPIFFWORKFLOW_BACKEND_OPEN_ID_CLIENT_ID: "spiffworkflow-backend"
