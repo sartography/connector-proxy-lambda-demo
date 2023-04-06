@@ -23,8 +23,9 @@ def lambda_handler(event, context):
 def route_index(event, context):
     return {
         "statusCode": 200,
-        "body": json.dumps("This is the SpiffWorkflow Connector.   Point SpiffWorkfow-backend configuration to this url." \
-           " Please see /v1/commands for a list of commands this connector proxy will allow."),
+        "body": json.dumps("This is the SpiffWorkflow Connector, lambda demo version. " \
+                           " Point SpiffWorkfow-backend configuration to this url." \
+                           " Please see /v1/commands for a list of commands this connector proxy will allow."),
     }
 
 def route_v1_commands(event, context):

@@ -1,5 +1,3 @@
-LAMBDA_CONTAINER := connector-proxy-lambda-demo
-LAMBDA_SERVICE := lambda
 
 .PHONY: all
 all: start
@@ -16,10 +14,17 @@ start: stop build
 stop:
 	docker compose down
 
-.PHONY: shell
-shell:
-	docker exec -it $(LAMBDA_CONTAINER) /bin/bash
-
 .PHONY: request-index
 request-index:
 	curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{"rawPath": "/"}'
+
+.PHONY: request-commands
+request-commands:
+	curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{"rawPath": "/v1/commands"}'
+
+.PHONY: zip
+zip: build
+	set -e ;\
+	TMP_ID=$$(docker create connector-proxy-lambda-demo-lambda) ;\
+	docker cp $$TMP_ID:/zip/connector_proxy_lambda_demo.zip . ;\
+	docker rm -v $$TMP_ID ;\
