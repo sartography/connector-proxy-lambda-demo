@@ -56,4 +56,30 @@ Click your function URL again to see a hello from our deployed Connector Proxy.
 
 ## Integrating With SpiffArena
 
-Congrats, your Connector Proxy has been deployed as a Lambda function. To integrate it with SpiffArena we simply need to update an environment variable and restart the backend.
+Congrats, your Connector Proxy has been deployed as a Lambda function. To integrate it with SpiffArena we simply need to update an environment variable and restart the backend. If using the [Getting Started Guide](https://www.spiffworkflow.org/posts/articles/get_started/) open the docker-compose.yml file, else edit the environment variable in the way appropriate for your deployment. The variable we need to change is called `SPIFFWORKFLOW_BACKEND_CONNECTOR_PROXY_URL`.
+
+Example diff using the function URL from the above images:
+
+```
+diff --git a/docker-compose.yml b/docker-compose.yml
+index 95b87b39..7d55c492 100644
+--- a/docker-compose.yml
++++ b/docker-compose.yml
+@@ -26,7 +26,7 @@ services:
+       SPIFFWORKFLOW_BACKEND_URL: "http://localhost:${SPIFF_BACKEND_PORT:-8000}"
+ 
+       SPIFFWORKFLOW_BACKEND_BPMN_SPEC_ABSOLUTE_DIR: "/app/process_models"
+-      SPIFFWORKFLOW_BACKEND_CONNECTOR_PROXY_URL: "http://spiffworkflow-connector:8004"
++      SPIFFWORKFLOW_BACKEND_CONNECTOR_PROXY_URL: "https://crbxgaopinfxqscntkqixjbl4e0gigpm.lambda-url.us-east-1.on.aws/"
+       SPIFFWORKFLOW_BACKEND_DATABASE_URI: "mysql+mysqlconnector://root:${SPIFF_MYSQL_PASS:-my-secret-pw}@spiffworkflow-db:${SPIFF_MYSQL_PORT:-8003}/spiffworkflow_backend_development"
+       SPIFFWORKFLOW_BACKEND_LOAD_FIXTURE_DATA: "false"
+       SPIFFWORKFLOW_BACKEND_OPEN_ID_CLIENT_ID: "spiffworkflow-backend"
+
+```
+
+Restart:
+
+```
+docker compose down
+docker compose up -d
+```
