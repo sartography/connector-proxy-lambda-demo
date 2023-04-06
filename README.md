@@ -2,44 +2,48 @@
 
 Demo showing how a serverless connector proxy could be deployed as an AWS Lambda Function for use by Spiff Arena.
 
-## Without Docker
+Requires docker and docker compose.
 
-Install dependencies:
+## To deploy from the AWS Lambda Console:
 
-```
-poetry install
-```
-
-Build the artifact to upload:
+In the root of this project run:
 
 ```
-./make_zip.sh
+make zip
 ```
 
-To deploy from the AWS Lambda Console:
+Create a new lambda function with a publicly available function url. Choose upload from zip and select `connector_proxy_lambda_demo.zip` from the root directory of this demo. Click on the function url link above the code editor and your connector proxy is live.
 
-Create a new lambda function with a publicly available function url. Choose upload from zip and select `artifact.zip` from the root directory of this demo. Click on the function url link above the code editor and your connector proxy is live.
-
-## With Docker
+## Local Testing
 
 ```
-docker build -t lambda_demo .
+make start
 ```
 
-To test:
+Will start the lambda development server locally on port 9000. Two example requests are baked in to the `Makefile`.
 
 ```
-docker run -p 9000:8080 lambda_demo
+make request-index
 ```
 
-In another terminal:
+```
+make request-commands
+```
+
+These will confirm the lambda function is responding correctly locally. When done:
 
 ```
-curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{"rawPath": "/"}'
+make stop
+```
+
+If you just want to build the docker image:
+
+```
+make build
 ```
 
 I have not gone through the motions yet of uploading to ECR/configuring a lamba with the container image.
 
 ### Some notes
 
-This is a demo and only has an http get and post connector currently. If this were used outside of a demo it would be nice to be able to opt out of the flask portions of `spiffworkflow-proxy` or extract the `PluginService` to reduce the deployment size.
+This is a demo and only has an http get and post connector currently. If this were used outside of a demo it would be nice to be able to opt out of the flask portions of `spiffworkflow-proxy` or extract the `PluginService` to reduce the deployment size. It would also be beneficial to extract the lambda routing logic into its own package.
