@@ -8,4 +8,12 @@
 
 ## Service Tasks and Connector Proxies
 
-When authoring a BPMN diagram, Service Tasks are used to communicate with external systems. An example of this would be making an http get request to find the current weather for a given zipcode or performing an http post to submit results of a running process to another system. 
+When authoring a BPMN diagram, `Service Tasks` are used to communicate with external systems. By leveraging Service Tasks workflows can make http based api calls, write files to S3, find an employee's manager via the HR system or send a fax. The response from the external system is available to your workflow for future handling.
+
+While a Service Task provides the BPMN diagram author with the means of configuring how and when SpiffArena should communicate with an external system, a `Connector Proxy` is required to perform the actual communication. The reasons for this are:
+
+1. Decouple dependencies required to talk to any system from those required to execute workflows.
+2. Allow for communication with pre-existing sdks that may not be written in Python.
+3. Provide a uniform way for BPMN diagram authors to configure communication to external systems
+
+
