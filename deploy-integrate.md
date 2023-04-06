@@ -98,4 +98,6 @@ Run the process and once complete you can see the response in the workflow:
 
 ![Screenshot from 2023-04-06 16-49-53](https://user-images.githubusercontent.com/100367399/230491713-9d3f9bd0-f284-4004-b00c-cb6dc94b53df.png)
 
+## Congrats!
 
+You have successfully deployed your own `Connector Proxy` as an `AWS Lambda function` and integrated it with `SpiffArena`. You made a call from a workflow to get a dog fact. Now imagine that call was to talk to an external system relevant to your business processes.
