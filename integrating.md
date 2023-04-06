@@ -20,21 +20,21 @@ Once `make zip` completes `connector_proxy_lambda_demo.zip` will be available in
 
 Log in to the AWS Console and navigate to the Lambda section. 
 
+![Screenshot from 2023-04-06 15-19-35](https://user-images.githubusercontent.com/100367399/230482600-bf5f72b4-f499-4d44-8f6b-814d8e4c67d2.png)
+
 From there choose `Create function`.
 
+![Screenshot from 2023-04-06 15-22-39](https://user-images.githubusercontent.com/100367399/230482607-ad561180-9a4d-4ad1-8e4c-c97903f99100.png)
 
-### Old stuff below
+Choose to `Author from scratch` and select the most recent Python runtime.
 
-3. You want to see how cool it is to add integrations with external systems from SpiffArena.
+![Screenshot from 2023-04-06 15-23-19](https://user-images.githubusercontent.com/100367399/230482609-8bece818-a41f-4f37-99c4-d9d10bef4d54.png)
 
-## Service Tasks and Connector Proxies Recap
+Under `Advanced Settings` check `Enable function URL`. For this demo we will use the `NONE` auth type to keep things simple.
 
-When authoring a BPMN diagram, `Service Tasks` are used to communicate with external systems. By leveraging Service Tasks workflows can make http based api calls, write files to S3, find an employee's manager via the HR system or send a fax. The response from the external system is available to your workflow for future handling.
+![Screenshot from 2023-04-06 15-24-12](https://user-images.githubusercontent.com/100367399/230482613-8fa6c8ef-5035-4a77-9670-f7211bf92cc0.png)
 
-While a Service Task provides the BPMN diagram author with the means of configuring how and when SpiffArena should communicate with an external system, a `Connector Proxy` is required to perform the actual communication. The reasons for this are:
+After hitting the `Create function` button you will be taken to your new Lambda function:
 
-1. Decouple dependencies required to talk to any system from those required to execute workflows.
-2. Allow for communication with pre-existing sdks that may not be written in Python.
-3. Provide a uniform way for BPMN diagram authors to configure communication to external systems
+![Screenshot from 2023-04-06 16-02-11](https://user-images.githubusercontent.com/100367399/230482618-cf4cf088-3629-4832-9a3d-d81f29842aff.png)
 
-## 
