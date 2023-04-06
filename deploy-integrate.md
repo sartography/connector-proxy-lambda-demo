@@ -53,3 +53,7 @@ After a confirmation dialog you will see your lambda has been updated:
 ![Screenshot from 2023-04-06 16-12-05](https://user-images.githubusercontent.com/100367399/230485279-425e71ca-1c7f-4da3-b5e0-2fd2a464d746.png)
 
 Click your function URL again to see a hello from our deployed Connector Proxy.
+
+## Integrating With SpiffArena
+
+Congrats, your Connector Proxy has been deployed as a Lambda function. To integrate it with SpiffArena we simply need to update an environment variable and restart the backend.
