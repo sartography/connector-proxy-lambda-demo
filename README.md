@@ -14,6 +14,8 @@ make zip
 
 Create a new lambda function with a publicly available function url. Choose upload from zip and select `connector_proxy_lambda_demo.zip` from the root directory of this demo. Click on the function url link above the code editor and your connector proxy is live.
 
+For more information and details about how to integrate with [SpiffArena](https://www.spiffworkflow.org/pages/spiffarena/) please see the [Deployment and Integration Guide](deploy-integrate.md).
+
 ## Local Testing
 
 ```
